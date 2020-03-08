@@ -1,0 +1,16 @@
+work
+libs
+*.mti
+*.wlf
+wlf*
+vsim.wlf
+*_stacktrace.vstf
+*.mpf
+impl
+compile
+log
+*.asdbw
+*.wsp
+Edfmap.ini
+projlib.cfg
+stimulators.set

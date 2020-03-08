@@ -1,0 +1,60 @@
+[Project]
+Current Flow=Generic
+VCS=0
+version=4
+Current Config=compile
+
+[Configurations]
+compile=work
+
+[Library]
+work=.\work\work.lib
+
+[Settings]
+AccessRead=0
+AccessReadWrite=0
+AccessACCB=0
+AccessACCR=0
+AccessReadWriteSLP=0
+AccessReadTopLevel=1
+DisableC=1
+ENABLE_ADV_DATAFLOW=0
+FLOW_TYPE=HDL
+LANGUAGE=VHDL
+REFRESH_FLOW=1
+FLOWTOOLS=NONE
+FAMILY=
+fileopenfolder=.\src
+
+[LocalVerilogSets]
+EnableSLP=1
+EnableDebug=0
+
+[LocalVhdlSets]
+CompileWithDebug=0
+
+[$LibMap$]
+work=.
+Active_lib=
+
+[ORDER]
+Synchronize=0
+
+[Files.Data]
+.\src\debounce_tb.vhd=VHDL Source Code
+.\src\debounce_rtl.vhd=VHDL Source Code
+.\src\debounce_model_beh.vhd=VHDL Source Code
+.\src\wave.awc=Accelerated Waveform Configuration
+
+[Files]
+/debounce_model_beh.vhd=-1
+/debounce_rtl.vhd=-1
+/debounce_tb.vhd=-1
+
+/wave.awc=-1
+[SpecTracer]
+WindowVisible=0
+[HierarchyViewer]
+HierarchyInformation=debounce_tb|sim|0  
+ShowHide=ShowTopLevel
+Selected=

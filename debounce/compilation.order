@@ -1,0 +1,3 @@
+.\src\debounce_model_beh.vhd
+.\src\debounce_rtl.vhd
+.\src\debounce_tb.vhd
