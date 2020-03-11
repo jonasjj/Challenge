@@ -30,13 +30,31 @@ begin
 
   clk <= not clk after clk_period / 2;
 
-  DUT : entity work.debounce(rtl)
-	port map (
-	 clk => clk,
-	 rst => rst,
-	 button => button,
-	 press => press		 
-	);
+  -- DUT : entity work.debounce(rtl)
+	-- port map (
+	--  clk => clk,
+	--  rst => rst,
+	--  button => button,
+	--  press => press		 
+  -- );
+  
+  DUT : entity work.debounce_model(beh)
+  generic map (
+      -- 0: No error
+      -- 1: Wrong reset value
+      -- 2: No output pulse
+      -- 3: Pulse lasts more than 1 clock cycle
+      -- 4: Accepts button-down < 1000 clock cycles after button-up
+      -- 5: Timeout is slightly longer than 1000 clock cycles
+      -- 6: Continuous button-down produces repeated pulses
+    error_mode => 0
+  )
+  port map (
+    clk => clk,
+    rst => rst,
+    button => button,
+    press => press
+  );
 
   SEQUENCER_PROC : process
 
@@ -56,9 +74,17 @@ begin
 
     pulse;
 
+    -- Check the value after reset
 
+    -- Check value after the first button press
 
-    
+    -- Check that the pulse lasts for 1 clock cycle
+
+    -- Check that a button-down < 1000 clock cycles after button-up is ignored
+
+    -- Check that a button-down > 1000 cycles after the last button-up is counted
+
+    -- Check that there is no new pulse on continuous button-down
 
     wait for 10 * clk_period;
     write(str, string'("Test finished: OK"));
